@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:notes_app/widgets/custom_app_bar.dart';
+
+import '../widgets/notes_view_body.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -6,13 +10,15 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Notes', style: TextStyle(fontSize: 30),),
-
-      ),
-      body: Center(
-        child: Text('Welcome to Notes!'),
-      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+          children: [
+            CustomAppBar(),
+            Expanded(child: NotesViewBody()),
+          ],
+        ),
+      )
     );
   }
 }
