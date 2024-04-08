@@ -7,7 +7,7 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-          padding: const EdgeInsets.only(bottom: 16.0),
+          padding: const EdgeInsets.only(bottom: 10.0),
           child: Container(
             padding: EdgeInsets.only(top: 24, left: 16, bottom: 24),
             decoration: BoxDecoration(
