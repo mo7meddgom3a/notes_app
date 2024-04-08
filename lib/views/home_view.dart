@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 
-import '../widgets/notes_view_body.dart';
+import '../widgets/list_view_builder.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -15,7 +14,7 @@ class HomeView extends StatelessWidget {
         child: Column(
           children: [
             CustomAppBar(),
-            Expanded(child: NotesViewBody()),
+            NotesListView(),
           ],
         ),
       )
