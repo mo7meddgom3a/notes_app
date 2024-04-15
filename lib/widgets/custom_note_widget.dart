@@ -36,7 +36,8 @@ class CustomNoteWidget extends StatelessWidget {
                 size: 24,
               ),
               color: Colors.black,
-            )),
+            ),
+        ),
         Padding(
           padding: const EdgeInsets.only(top: 16, right: 24.0),
           child: Text(
