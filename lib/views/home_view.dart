@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
             showModalBottomSheet(
               context: context,
               builder: (context) {
-                return const AddNote();
+                return const AddNoteBottomSheet();
               },
             );
           },
