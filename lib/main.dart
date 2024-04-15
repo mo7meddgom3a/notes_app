@@ -19,7 +19,7 @@ class NotesApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins', brightness: Brightness.dark),
-      home: HomeView(),
+      home: const HomeView(),
     );
   }
 }

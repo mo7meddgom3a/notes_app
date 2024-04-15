@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
-
 import '../widgets/add_note.dart';
 import '../widgets/list_view_builder.dart';
 
@@ -10,8 +9,8 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
+        body:const Padding(
+          padding: EdgeInsets.symmetric(
             horizontal: 24.0,
           ),
           child: Column(
@@ -29,11 +28,11 @@ class HomeView extends StatelessWidget {
             showModalBottomSheet(
               context: context,
               builder: (context) {
-                return AddNote();
+                return const AddNote();
               },
             );
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ));
   }
 }

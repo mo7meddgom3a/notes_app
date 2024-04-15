@@ -10,21 +10,21 @@ class CustomButton extends StatelessWidget {
     return Container(
       height: 50,
       width: MediaQuery.of(context).size.width,
-      child: Center(
-        child: Text(
-          'Add Note',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-          ),
-        ),
-      ),
       decoration: BoxDecoration(
         color: Colors.blue.withOpacity(
           .1,
         ),
         borderRadius: BorderRadius.circular(
           10,
+        ),
+      ),
+      child: const Center(
+        child: Text(
+          'Add Note',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+          ),
         ),
       ),
     );
