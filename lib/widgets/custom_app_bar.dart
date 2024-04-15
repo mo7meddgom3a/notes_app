@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_icon.dart';
+
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, required this.icon, required this.title});
   final IconData icon;
@@ -16,23 +18,10 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Container(
-            height: 45,
-            width: 45,
-            child: Icon(
-              icon,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(
-                .1,
-              ),
-              borderRadius: BorderRadius.circular(
-                10,
-              ),
-            ),
-          )
+          CustomIcon(icon: icon)
         ],
       ),
     );
   }
 }
+
