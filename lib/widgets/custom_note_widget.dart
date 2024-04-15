@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomNoteWidget extends StatelessWidget {
-   CustomNoteWidget({super.key, this.index});
+  const CustomNoteWidget({super.key, this.index});
   final int? index;
   @override
   Widget build(BuildContext context) {
