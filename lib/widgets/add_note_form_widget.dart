@@ -17,7 +17,7 @@ class AddNoteForm extends StatefulWidget {
 class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   AutovalidateMode _autoValidateMode = AutovalidateMode.disabled;
-  String? _title , _subtitle;
+  String? _title, _subtitle;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -47,22 +47,29 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 16,
           ),
-          CustomButton(
-            onTap: () {
-              if (_formKey.currentState!.validate()){
-                _formKey.currentState!.save();
+          BlocBuilder<AddNoteCubit, AddNoteState>(
+            builder: (context, state) {
+              return CustomButton(
+                isLoading: state is AddNoteLoading ? true : false,
+                onTap: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
 
-                var noteModel = NoteModel(color : Colors.blue.value, title: _title!, subtitle: _subtitle!, date: DateTime.now().toString());
-                BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
-              }else{
-                _autoValidateMode = AutovalidateMode.always;
-                setState(() {
-
-                });
-              }
+                    var noteModel = NoteModel(
+                        color: Colors.blue.value,
+                        title: _title!,
+                        subtitle: _subtitle!,
+                        date: DateTime.now().toString());
+                    BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+                  } else {
+                    _autoValidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+                color: Colors.white,
+                text: 'add note',
+              );
             },
-            color: Colors.black,
-            text: 'add note',
           ),
         ],
       ),
