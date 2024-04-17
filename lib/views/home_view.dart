@@ -26,6 +26,7 @@ class HomeView extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             showModalBottomSheet(
+              isScrollControlled: true,
               context: context,
               builder: (context) {
                 return const AddNoteBottomSheet();
