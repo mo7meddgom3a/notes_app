@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'custom_note_widget.dart';
 
-class NotesViewBody extends StatelessWidget {
-  const NotesViewBody({super.key , this.index});
-  final int? index;
+class NotesItem extends StatelessWidget {
+  const NotesItem({super.key, required this.note,});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -16,9 +17,9 @@ class NotesViewBody extends StatelessWidget {
               padding: const EdgeInsets.only(top: 24, left: 16, bottom: 24),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Colors.amber,
+                color:Color(note.color),
               ),
-              child: CustomNoteWidget(index: index,),
+              child: CustomNoteWidget(note: note),
             ),
           ),
         );
