@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:notes_app/constants.dart';
-import 'package:notes_app/simpel_bloc_observer.dart';
+import 'package:notes_app/simple_bloc_observer.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 import 'cubit/noted_cubit/notes_cubit.dart';
 import 'models/note_model.dart';
@@ -11,7 +11,7 @@ import 'views/home_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarIconBrightness: Brightness.light,
     systemNavigationBarColor: Color(0xFF1A1A1A),
   ));
@@ -30,10 +30,6 @@ class NotesApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => NotesCubit(),
       child: MaterialApp(
-        routes: {
-          'HomeView': (context) => HomeView(),
-          "EditNoteView": (context) => EditNoteView(),
-        },
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Poppins', brightness: Brightness.dark),
         home: const HomeView(),
