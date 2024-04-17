@@ -9,7 +9,3 @@ final class NotesSuccess extends NotesState {
   final List<NoteModel> notes;
   NotesSuccess(this.notes);
 }
-final class NotesFailure extends NotesState {
-  final String error;
-  NotesFailure(this.error);
-}
