@@ -35,10 +35,6 @@ class EditNoteView extends StatelessWidget {
               SizedBox(
                 height: 16,
               ),
-              CustomButton(
-                color: Colors.white,
-                text: "save",
-              ),
             ],
           ),
         ),
