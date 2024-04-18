@@ -11,6 +11,7 @@ class EditNoteView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: EditNoteViewBody(note: note,),
+
       ),
     );
   }
